@@ -12,16 +12,7 @@ pipeline{
 
     }
     stages{
-        stage('display path of the jeniks'){
-
-            steps{
-                sh'''
-                  echo "this is the declarative pipeline"
-                  echo "PATH =${PATH}
-                '''
-            }
-
-        }
+      
         stage('checkout the source code'){
          steps{
              checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://rishikaymaji@bitbucket.org/iwayqtech/javaloginapp.git']]])
